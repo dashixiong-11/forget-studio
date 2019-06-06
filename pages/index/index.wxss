@@ -1,0 +1,151 @@
+/**index.wxss**/
+.header {
+    height: 150rpx;
+    width: 100%;
+    overflow: hidden;
+    position: relative;
+}
+
+.header > image {
+    width: 100%;
+    position: absolute;
+    top: -120rpx;
+}
+
+.main {
+    margin-top: 20rpx;
+}
+
+.myclasslist {
+    height: 250rpx;
+}
+
+.courses-header {
+    display: block;
+    border-bottom: 1px solid #efedea;
+    padding: 10rpx;
+    
+}
+
+.courses-header > image {
+    width: 26rpx;
+    height: 26rpx;
+    color: black;
+    margin-left: 70%;
+}
+
+.courses-text {
+    font-size: 16px;
+}
+
+.borderleft {
+    display: inline-block;
+    width: 5rpx;
+    height: 25rpx;
+    background-color: black;
+    margin: 0 20rpx 0;
+}
+
+.courses-list {
+}
+
+swiper {
+    height: 100rpx;
+}
+
+.myclasslist image {
+    width: 100rpx;
+    height: 100rpx;
+}
+
+.myclasslist .className {
+    width: 100%;
+    margin:30rpx 0;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    box-shadow: 1px 1px 6px gainsboro;
+}
+
+.Image {
+    flex-grow: 1;
+    width: 50%;
+    height: 80rpx;
+}
+
+.Image .imgname {
+    font-size: 35px;
+    font-weight: bold;
+    color: white;
+    position: relative;
+    top: 20%;
+    left: 70%;
+}
+
+.enter {
+    height: 80rpx;
+    padding: 0 1em;
+    line-height: 80rpx;
+}
+
+.enter:focus {
+    color: red;
+}
+
+.an {
+    padding: 30rpx;
+}
+
+.anbody {
+    border: 1px solid gainsboro;
+    border-radius: 10rpx;
+    box-shadow: 1px 1px 6px gray;
+}
+
+.title {
+    text-align: center;
+    padding: 5rpx 0;
+    font-size: 16px;
+    font-weight: bold;
+}
+
+.content {
+    border-top: 1px solid gainsboro;
+    padding: 30rpx;
+    font-size: 15px;
+}
+
+.date {
+    text-align: end;
+    font-size: 14px;
+    padding: 20rpx;
+}
+.active{
+    display: none;
+}
+
+.showmodel {
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background: rgba(0, 0, 0, 0.5);
+}
+
+.bd {
+    border: 1px solid grey;
+    margin: 0 auto;
+    opacity: 1;
+    width: 70%;
+    background: white;
+    border-radius: 20rpx;
+    padding: 50rpx;
+    margin-top: 30%;
+    box-shadow: 1px 1px 6px dimgrey;
+}
+.bd button {
+    font-size: 14px;
+    width: 40%;
+}
+

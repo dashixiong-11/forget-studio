@@ -1,0 +1,94 @@
+/* pages/my/my.wxss */
+
+.userinfo {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    vertical-align: middle;
+    background-color: #EEE9E9;
+}
+
+.userinfo-avatar {
+    width:128rpx;
+    height:128rpx;
+    margin:50rpx;
+    border-radius: 50%;
+    
+}
+
+.userinfo-detail {
+    margin-right:40rpx;
+    font-size: 16px;
+}
+
+.userinfo-nickname {
+    color: #aaa;
+    margin-right:300rpx;
+}
+
+.my-courses {
+    font-size: 16px;
+    padding: 15rpx 20rpx 15rpx;
+    margin: 20rpx 0 20rpx;
+    border-bottom: 1px solid #efedea;
+}
+
+.my-courses > image {
+    display: inline-block;
+    vertical-align: middle;
+    width: 30rpx;
+    height: 30rpx;
+}
+
+.my-courses text {
+    display: inline-block;
+    vertical-align: middle;
+    margin-left: 20rpx;
+}
+
+.right {
+    margin-left: 500rpx;
+}
+
+.active {
+    display: none;
+}
+
+input {
+    font-size: 16px;
+    border-radius: 10rpx;
+    border: 1px solid #ddd;
+    padding-left: 10px;
+}
+
+button {
+    font-size: 14px;
+    width: 40%;
+}
+
+.showmodel {
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background: rgba(0, 0, 0, 0.5);
+}
+
+.bd {
+    border: 1px solid grey;
+    margin: 0 auto;
+    opacity: 1;
+    width: 70%;
+    background: white;
+    border-radius: 20rpx;
+    padding: 50rpx;
+    margin-top: 30%;
+    box-shadow: 1px 1px 6px dimgrey;
+}
+.yzm {
+    display: flex;
+    margin: 20rpx 0;
+    align-items: center;
+}

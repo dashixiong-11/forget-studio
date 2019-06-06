@@ -1,0 +1,38 @@
+<!--index.wxml-->
+<view>
+    <view class="userinfo">
+        <image bindtap="bindViewTap" class="userinfo-avatar" src="{{userInfo.avatarUrl}}" mode="cover"></image>
+        <text class="userinfo-nickname">{{userInfo.nickName}}</text>
+        <text bindtap='bindViewTap' class="userinfo-detail">绑定手机</text>
+    </view>
+    <view class='showmodel {{active?"active":""}}'>
+        <view class='bd'>
+            <input bindinput='getphone' focus="true" placeholder="请输入手机号码" type='number'
+                   placeholder-style="color:#e3e4e4;font-size:14px;"></input>
+            <view class="yzm">
+                <input placeholder="请填写验证码" placeholder-style="color:#e3e4e4;font-size:14px;"></input>
+                <button wx:if="min" bindtap="postcode">发送验证码</button>
+                <button wx:else>60s</button>
+            </view>
+            <view style="display: flex;">
+                <button bindtap="bangding">确定</button>
+                <button bindtap="close">取消</button>
+            </view>
+
+        </view>
+    </view>
+    <view class='courses'>
+        <view class='my-courses'>
+            <image src='../../img/study.png'></image>
+            <text>我的课程</text>
+            <image class='right' src='../../img/right.png'></image>
+        </view>
+    </view>
+    <view class='courses'>
+        <view class='my-courses'>
+            <image src='../../img/study.png'></image>
+            <text>管理课程</text>
+            <image class='right' src='../../img/right.png'></image>
+        </view>
+    </view>
+</view>

@@ -1,0 +1,98 @@
+<!--index.wxml-->
+<view>
+    <button wx:if="{{!hasUserInfo && canIUse}}" open-type="getUserInfo" bindgetuserinfo="getUserInfo"> 获取头像昵称</button>
+    <view wx:else>
+        <view class='header'>
+            <image mode='scaleToFillc' src='../../img/cover.jpeg'></image>
+        </view>
+        <view class="an">
+            <view class="anbody">
+                <view class="title">通知</view>
+                <view class="content">同学们：本小程序还属于抢先体验阶段，遇到任何问题请及时向老板娘反馈，我们将看心情修复。</view>
+                <view class="date">{{date}}</view>
+            </view>
+        </view>
+        <view class='main'>
+            <view class='all-courses'>
+                <view class='courses-header'>
+                    <view class='borderleft'></view>
+                    <text class='courses-text'>所有课程</text>
+                    <image mode='aspectFit' src='../../img/right.png'></image>
+                </view>
+                <scroll-view scroll-y='true' class="myclasslist">
+                    <view>
+                        <view class="className" bindtap="baoming">
+                            <view class="Image" style="background: url('../../img/tx.jpg') center center;background-size: cover;">
+                                <text class="imgname">色彩</text>
+                            </view>
+                            <view class="enter">
+                                报名
+                            </view>
+                        </view>
+                        <view class="className">
+                            <view class="Image" style="background: url('../../img/tx.jpg') center center;background-size: cover;">
+                                <text class="imgname">色彩</text>
+                            </view>
+                            <view class="enter">
+                                报名
+                            </view>
+                        </view>
+                        <view class="className">
+                            <view class="Image" style="background: url('../../img/tx.jpg') center center;background-size: cover;">
+                                <text class="imgname">色彩</text>
+                            </view>
+                            <view class="enter">
+                                报名
+                            </view>
+                        </view>
+                    </view>
+                </scroll-view>
+            </view>
+            <block class='my-courses'>
+                <view class='courses-header'>
+                    <view class='borderleft'></view>
+                    <text class='courses-text'>我的课程</text>
+                    <image mode='aspectFit' src='../../img/right.png'></image>
+                </view>
+                <scroll-view scroll-y='true' class="myclasslist">
+                    <view>
+                        <view class="className">
+                            <view class="Image" style="background: url('../../img/tx.jpg') center center;background-size: cover;">
+                                <text class="imgname">色彩</text>
+                            </view>
+                        </view>
+                        <view class="className">
+                            <view class="Image" style="background: url('../../img/tx.jpg') center center;background-size: cover;">
+                                <text class="imgname">色彩</text>
+                            </view>
+                        </view>
+                        <view class="className">
+                            <view class="Image" style="background: url('../../img/tx.jpg') center center;background-size: cover;">
+                                <text class="imgname">色彩</text>
+                            </view>
+                        </view>
+                    </view>
+                </scroll-view>
+            </block>
+        </view>
+        <view class='showmodel {{active?"active":""}}'>
+            <view class='bd'>
+                <view class="section__title">时间选择器</view>
+                <picker mode="date" value="{{date}}" start="2019-06-01" end="2110-09-01" bindchange="bindDateChange">
+                    <view class="picker">
+                        当前选择: {{date}}
+                    </view>
+                </picker>
+                <picker mode="time" value="{{time}}" start="09:01" end="21:01" bindchange="bindTimeChange">
+                    <view class="picker">
+                        当前选择: {{time}}
+                    </view>
+                </picker>
+                <view style="display: flex;">
+                    <button bindtap="bangding">确定</button>
+                    <button bindtap="close">取消</button>
+                </view>
+            </view>
+        </view>
+    </view>
+</view>
