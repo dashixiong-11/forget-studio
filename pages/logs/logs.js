@@ -11,5 +11,10 @@ Page({
         return util.formatTime(new Date(log))
       })
     })
+  },
+  add(){
+    wx.navigateTo({
+      url: '../add/add'
+    })
   }
 })

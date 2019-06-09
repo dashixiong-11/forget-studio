@@ -85,4 +85,9 @@ Page({
       return false
     }
   },
+  manage(){
+    wx.navigateTo({
+      url: '../logs/logs'
+    })
+  }
 })
