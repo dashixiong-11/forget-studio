@@ -9,10 +9,17 @@ Page({
     canIUse: wx.canIUse('button.open-type.getUserInfo'),
     date:'',
     active:true,
+    telphone:'',
+    myphone:app.globalData.myphone,
+    bindphone:true,
+    min:false,
     time:'',
-    date:''
+    date:'',
+    code:'',
+    mycode:''
   },
   onLoad: function () {
+    console.log(this.data.myphone)
     if (app.globalData.userInfo) {
       this.setData({
         userInfo: app.globalData.userInfo,
@@ -52,19 +59,18 @@ Page({
     })
   },
   getUserInfo: function(e) {
-    console.log(e)
     app.globalData.nickName = e.detail.userInfo.nickName
     console.log(app.globalData.openID)
-    var query = new app.globalData.AV.Query('All');
+    let query = new app.globalData.AV.Query('All');
     query.contains('openid', app.globalData.openID);
     query.find().then(function (res) {
+        console.log('1')
+      console.log(res)
       if(!res.length){
-        var TestObject = app.globalData.AV.Object.extend('All');
-        var testObject = new TestObject();
+        let TestObject = app.globalData.AV.Object.extend('All');
+        let testObject = new TestObject();
         testObject.set('openid', app.globalData.openID);
-        testObject.set('name',app.globalData.nickName);
         testObject.save().then(function (res) {
-          
         }, function (error) {
           // 失败
         })
@@ -87,6 +93,11 @@ Page({
       active:true
     })
   },
+  closebind(){
+    this.setData({
+      myphone: '123'
+    })
+  },
   bindDateChange: function(e) {
     console.log('picker发送选择改变，携带值为', e.detail.value)
     this.setData({
@@ -98,5 +109,66 @@ Page({
     this.setData({
       time: e.detail.value
     })
+  },
+  getphone(e){
+    this.setData({
+      telphone:e.detail.value
+    })
+  },
+  getcode(e){
+    this.setData({
+      mycode:e.detail.value
+    })
+  },
+  bangding(){
+
+    console.log(this.data.code,this.data.telphone,this.data.mycode)
+    if(this.data.code == this.data.mycode){
+      this.setData({
+        myphone: this.data.telphone
+      })
+      app.globalData.myphone = this.data.telphone
+let query = new app.globalData.AV.Query('All');
+    query.contains('phone', this.data.telphone);
+    query.find().then((res)=>{
+        console.log(res)
+      let TestObject = app.globalData.AV.Object.extend('All');
+      let testObject = new TestObject();
+      testObject.set('openid', app.globalData.openID);
+      testObject.save().then(function (res) {
+      }, function (error) {
+        // 失败
+      })
+
+    })
+    }
+  },
+  postcode(){
+    let str = /^1\d{10}$/
+    if (str.test(this.data.telphone)) {
+      wx.request({
+        url: 'https://zjw.llilu.com/News.php?',
+        data: {
+          tel: this.data.telphone
+        },
+        method: 'GET',
+        header: {
+          'content-type': 'application/json'
+        },
+        success:  (res)=> {
+          console.log(res)
+          this.data.code = res.data.code
+          wx.showToast({
+            title: '验证码已发送',
+            icon:'none'
+          })
+        }
+      })
+    } else {
+      wx.showToast({
+        title: '手机号不正确',
+      })
+      return false
+    }
   },
 })

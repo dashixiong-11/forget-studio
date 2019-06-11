@@ -8,6 +8,7 @@ Page({
     hasUserInfo: false,
     canIUse: wx.canIUse('button.open-type.getUserInfo'),
     active:'true',
+    myphone:app.globalData.myphone,
     min:'false',
     telphone:'',
     code:''

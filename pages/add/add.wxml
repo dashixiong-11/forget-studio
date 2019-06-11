@@ -1,2 +1,19 @@
 <!--pages/add/add.wxml-->
-<text>pages/add/add.wxml</text>
+<view>
+    <form bindsubmit="formSubmit">
+        <view style="padding:20rpx;">
+            <view class="float"><view>姓名:</view><input type="text" name="truename" /></view>
+            <view class="float"><view>号码:</view><input type="number" name="phone" maxlength="11" placeholder="必填"/></view>
+            <view class="float"><view>素描:</view><input type="number" name="sm"  value="{{sm}}" /></view>
+            <view class="float"><view>国画:</view><input type="number" name="gh"  value="{{gh}}" /></view>
+            <view class="float"><view>书法:</view><input type="number" name="sf"  value="{{sf}}" /></view>
+            <view class="float"><view>彩铅:</view><input type="number" name="cq"  value="{{cq}}" /></view>
+            <view class="float"><view>水彩:</view><input type="number" name="sc"  value="{{sc}}" /></view>
+            <view class="float"><view>油画:</view><input type="number" name="yh"  value="{{yh}}" /></view>
+            <view class="btn">
+                <button form-type="submit">确定</button>
+                <button form-type="reset">重置</button>
+            </view>
+        </view>
+    </form>
+</view>

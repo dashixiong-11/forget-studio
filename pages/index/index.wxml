@@ -1,6 +1,22 @@
 <!--index.wxml-->
 <view>
     <button wx:if="{{!hasUserInfo && canIUse}}" open-type="getUserInfo" bindgetuserinfo="getUserInfo"> 获取头像昵称</button>
+    <view wx:elif="{{!myphone}}" class='showmodel'>
+        <view class='bd'>
+            <input bindinput='getphone' focus="true" placeholder="请输入手机号码" type='number'
+                   placeholder-style="color:#e3e4e4;font-size:14px;"></input>
+            <view class="yzm">
+                <input placeholder="请填写验证码" bindinput="getcode" placeholder-style="color:#e3e4e4;font-size:14px;"></input>
+                <button wx:if="min" bindtap="postcode">发送验证码</button>
+                <button wx:else>60s</button>
+            </view>
+            <view style="display: flex;">
+                <button bindtap="bangding">确定</button>
+                <button bindtap="closebind">取消</button>
+            </view>
+
+        </view>
+    </view>
     <view wx:else>
         <view class='header'>
             <image mode='scaleToFillc' src='../../img/cover.jpeg'></image>
@@ -75,7 +91,7 @@
                 </scroll-view>
             </block>
         </view>
-        <view class='showmodel {{active?"active":""}}'>
+<!--        <view class='showmodel {{active?"active":""}}'>
             <view class='bd'>
                 <view class="section__title">时间选择器</view>
                 <picker mode="date" value="{{date}}" start="2019-06-01" end="2110-09-01" bindchange="bindDateChange">
@@ -93,6 +109,6 @@
                     <button bindtap="close">取消</button>
                 </view>
             </view>
-        </view>
+        </view>-->
     </view>
 </view>

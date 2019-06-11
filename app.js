@@ -53,10 +53,17 @@ App({
     })
   },
   globalData: {
-    myphone:'',
+    myphone:null,
     nickName:null,
     userInfo: null,
     openID:null,
-    AV
+    AV,
+    truename:'',
+    sm:0,
+    gh:0,
+    sf:0,
+    cq:0,
+    sc:0,
+    yh:0
   }
 })

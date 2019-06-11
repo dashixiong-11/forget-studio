@@ -1,1 +1,16 @@
 /* pages/add/add.wxss */
+.float{
+    display: flex;
+    padding:10rpx;
+    margin:20rpx 0;
+    background: rgb(249,249,250);
+    font-size:16px;
+}
+.float>view{
+    color:dimgrey;
+    line-height: 26px;
+}
+input{
+    padding-left: 10rpx;
+    font-size: 15px;
+}
